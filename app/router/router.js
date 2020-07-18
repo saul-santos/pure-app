@@ -29,12 +29,10 @@ Router.prototype = {
         this.goToRoute(this.defaultRoute);
     },
     render: function render(route) {
-        try {
-            const view = views[route.htmlName];
-            document.getElementById('app').innerHTML = view;
-            
-            if(route.controller && typeof route.controller === 'function') {
-                route.controller();
+        try {            
+            if(route.component && typeof route.component === 'function') {
+                const view = route.component();
+                document.getElementById('app').innerHTML = view;
             }
         } catch (error) {
             console.error('[Router render]', error);
@@ -50,13 +48,13 @@ Router.prototype = {
     },
     goToRoute: function goToRoute(name) {
         window.location.hash = `#${name}`;
+        this.render(this.routes[name]);
     }
 };
 
-function Route(name, htmlName, controller) {
+function Route(name, component) {
     this.name = name;
-    this.htmlName = htmlName;
-    this.controller = controller;
+    this.component = component;
 }
 
 export { Router, Route };

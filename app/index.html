@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Pure App</title>
         <script type="module" src="index.js"></script>
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <nav class="menu">
+        <nav class="navigation-bar">
             <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre nosotros</a></li>
+                <li class="navigation-bar__items">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="navigation-bar__items">
+                    <a href="#about">About</a>
+                </li>
             </ul>
         </nav>
 
-        <button id="takeMeHome">Take me Home</button>
-
         <div id="app"></div>
 
-        <form id="addCounterForm">
+<!--         <form id="addCounterForm">
             <label for="phase">Phase</label>
             <input name="phase" type="number" />
             <button type="submit">Add Counter</button>
         </form>
 
-        <div id="counters"></div>
+        <div id="counters"></div> -->
     </body>
 </html>

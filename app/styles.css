@@ -1,0 +1,36 @@
+:root {
+    --main-color-gray: #6a737b;
+    --main-color-primary: #fbb034;
+}
+
+body {
+    margin: 0;
+}
+
+.navigation-bar {
+    background-color: var(--main-color-gray);
+    height: 5rem;
+    display: flex;
+}
+
+.navigation-bar__items {
+    display: inline-block;
+    padding: 1rem;
+}
+
+.navigation-bar__items > a {
+    color: var(--main-color-primary);
+    text-decoration: none;
+    line-height: 1rem;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation-bar__items > a:hover {
+    border-bottom: solid 3px var(--main-color-primary);
+}
+
+.navigation-bar__items > a:active {
+    color: white;
+    border-bottom: solid 3px white;
+}
